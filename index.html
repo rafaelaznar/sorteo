@@ -62,7 +62,11 @@
                     strTabla += ('<tr class="table-info"><td>' + sorteantes[i] + "</td><td></td></tr>");
                 }
             } else {
-                strTabla += ('<tr class="table-warning"><td></td><td>' + sorteados[i] + "</td></tr>");
+                if (sorteados.length > 0) {
+                    strTabla += ('<tr class="table-warning"><td></td><td>' + sorteados[i] + "</td></tr>");
+                } else {
+                    strTabla += ('<tr class="table-warning"><td>NO DATA</td><td>NO DATA</td></tr>");
+                }
             }
         }
         strTabla += '</table>';
