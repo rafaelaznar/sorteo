@@ -52,7 +52,7 @@
     function showResults(sorteantes, sorteados) {
         max = Math.max(sorteantes.length, sorteados.length);
         $("#resultado").empty();
-        $("#resultado").append("Resultados del sorteo:");
+        $("#resultado").append("Draw results:");
         strTabla = '<table class="table table-bordered">';
         for (i = 0; i <= max - 1; i++) {
             if (i <= sorteantes.length - 1) {
@@ -87,13 +87,13 @@
             nsorteantes = randomIntFromInterval(5, 15);
             nsorteados = randomIntFromInterval(5, 15);
             for (i = 1; i < nsorteantes; i++) {
-                $("#sorteantes").append("Sorteante " + i + "\n");
+                $("#sorteantes").append("Prize " + i + "\n");
             }
-            $("#sorteantes").append("Sorteante " + i);
+            $("#sorteantes").append("Prize " + i);
             for (i = 1; i < nsorteados; i++) {
-                $("#sorteados").append("Sorteado " + i + "\n");
+                $("#sorteados").append("Winner " + i + "\n");
             }
-            $("#sorteados").append("Sorteado " + i);
+            $("#sorteados").append("Winner " + i);
         });
 
         $("#start").on("click", function () {
