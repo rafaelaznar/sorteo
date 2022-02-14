@@ -107,7 +107,9 @@
             var sorteados = $('#sorteados').val().split('\n');
             cleanStrArray(sorteantes);
             cleanStrArray(sorteados);
-            sorteo(sorteados);
+            if (sorteados.length > 0){
+                sorteo(sorteados);
+            }
             showResults(sorteantes, sorteados)
         });
     });
