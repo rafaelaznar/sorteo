@@ -52,24 +52,24 @@
     function showResults(sorteantes, sorteados) {
         max = Math.max(sorteantes.length, sorteados.length);
         $("#resultado").empty();
-        $("#resultado").append("Draw results:");
-        strTabla = '<table class="table table-bordered">';
-        for (i = 0; i <= max - 1; i++) {
-            if (i <= sorteantes.length - 1) {
-                if (i <= sorteados.length - 1) {
-                    strTabla += ('<tr class="table-success"><td>' + sorteantes[i] + '</td><td>' + sorteados[i] + "</td></tr>");
-                } else {
-                    strTabla += ('<tr class="table-info"><td>' + sorteantes[i] + "</td><td></td></tr>");
-                }
-            } else {
-                if (sorteados.length > 0) {
+        $("#resultado").append("Draw results:");        
+        if (sorteados.length > 0) {
+            strTabla = '<table class="table table-bordered">';
+            for (i = 0; i <= max - 1; i++) {
+                if (i <= sorteantes.length - 1) {
+                    if (i <= sorteados.length - 1) {
+                        strTabla += ('<tr class="table-success"><td>' + sorteantes[i] + '</td><td>' + sorteados[i] + "</td></tr>");
+                    } else {
+                        strTabla += ('<tr class="table-info"><td>' + sorteantes[i] + "</td><td></td></tr>");
+                    }
+                } else {                
                     strTabla += ('<tr class="table-warning"><td></td><td>' + sorteados[i] + "</td></tr>");
-                } else {
-                    strTabla += ('<tr class="table-warning"><td>NO DATA</td><td>NO DATA</td></tr>');
                 }
-            }
+            }            
+            strTabla += '</table>';
+        } else {
+            strTabla = "NO DATA";
         }
-        strTabla += '</table>';
         $("#resultados").append(strTabla);
     }
 
